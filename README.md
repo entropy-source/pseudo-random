@@ -1,4 +1,4 @@
-[@aureooms/js-pseudo-random](https://aureooms.github.io/js-pseudo-random)
+:game_die: [@aureooms/js-pseudo-random](https://aureooms.github.io/js-pseudo-random)
 ==
 
 Pseudorandom number generators for JavaScript.
