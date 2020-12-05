@@ -21,8 +21,6 @@ See [docs](https://aureooms.github.io/js-pseudo-random/index.html).
 [![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/issues)
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-pseudo-random/main.svg)](https://codecov.io/gh/aureooms/js-pseudo-random)
-<!--[![Code coverage (alls)](https://img.shields.io/coveralls/github/aureooms/js-pseudo-random/main.svg)](https://coveralls.io/r/aureooms/js-pseudo-random)-->
-<!--[![Code coverage (clim)](https://img.shields.io/codeclimate/coverage/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/test_coverage_new_code)-->
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-pseudo-random/badge.svg)](https://aureooms.github.io/js-pseudo-random/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-pseudo-random)](https://bundlephobia.com/result?p=@aureooms/js-pseudo-random)
