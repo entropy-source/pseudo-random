@@ -75,7 +75,9 @@
   "bugs": {
     "url": "https://github.com/aureooms/js-pseudo-random/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@aureooms/js-uint64": "^3.0.1"
+  },
   "devDependencies": {
     "@babel/cli": "7.11.6",
     "@babel/core": "7.11.6",
