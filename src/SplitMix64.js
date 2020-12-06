@@ -14,4 +14,8 @@ export default class SplitMix64 {
 		return xor64(z, shr64(z, 31));
 	}
 
+	nextFloat() {
+		const [a, b] = this.next();
+		return (a >>> 0) / 2 ** 32 + (b >>> 0) / 2 ** 64;
+	}
 }
