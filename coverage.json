@@ -1,0 +1,18 @@
+{
+  "coverage": "0%",
+  "expectCount": 5,
+  "actualCount": 0,
+  "files": {
+    "src/SplitMix64.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        3,
+        4,
+        5,
+        8,
+        16
+      ]
+    }
+  }
+}
