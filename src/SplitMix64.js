@@ -1,4 +1,4 @@
-import {add64, mul64, xor64, get64} from '@aureooms/js-uint64';
+import {add64, mul64, xor64, shr64, get64} from '@aureooms/js-uint64';
 
 export default class SplitMix64 {
 
