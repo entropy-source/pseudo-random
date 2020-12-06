@@ -79,11 +79,12 @@
     "@aureooms/js-uint64": "^3.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.11.6",
-    "@babel/core": "7.11.6",
-    "@babel/preset-env": "7.11.5",
-    "@babel/register": "7.11.5",
-    "ava": "3.12.1",
+    "@aureooms/js-itertools": "^4.1.0",
+    "@babel/cli": "7.12.8",
+    "@babel/core": "7.12.9",
+    "@babel/preset-env": "7.12.7",
+    "@babel/register": "7.12.1",
+    "ava": "3.13.0",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.0.1",
     "babel-preset-power-assert": "3.0.0",
@@ -93,17 +94,27 @@
     "esdoc-inject-script-plugin": "1.0.0",
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
-    "np": "6.5.0",
+    "np": "7.0.0",
     "nyc": "15.1.0",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.7",
-    "xo": "0.33.1"
+    "xo": "0.35.0"
   },
   "files": [
     "lib"
   ],
   "homepage": "https://aureooms.github.io/js-pseudo-random",
-  "keywords": ["agpl", "generator", "javascript", "number", "prng", "pseudo", "random", "xoroshiro", "xoshiro"],
+  "keywords": [
+    "agpl",
+    "generator",
+    "javascript",
+    "number",
+    "prng",
+    "pseudo",
+    "random",
+    "xoroshiro",
+    "xoshiro"
+  ],
   "license": "AGPL-3.0",
   "main": "lib/index.js",
   "prettier": {
@@ -134,12 +145,8 @@
       "unicorn"
     ],
     "rules": {
-      "unicorn/filename-case": [
-        "error",
-        {
-          "case": "camelCase"
-        }
-      ]
+      "unicorn/filename-case": "off",
+      "unicorn/prefer-math-trunc": "off"
     },
     "overrides": [
       {
