@@ -1,12 +1,11 @@
 import {add64, mul64, xor64, shr64, get64} from '@aureooms/js-uint64';
 
 export default class SplitMix64 {
-
-	constructor ( seed ) {
+	constructor(seed) {
 		this.state = seed;
 	}
 
-	next () {
+	next() {
 		this.state = add64(this.state, get64(0x9e3779b9, 0x7f4a7c15));
 		let z = this.state;
 		z = mul64(xor64(z, shr64(z, 30)), get64(0xbf58476d, 0x1ce4e5b9));

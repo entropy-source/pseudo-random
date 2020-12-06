@@ -1,13 +1,11 @@
 const domReady = function (callback) {
 	const state = document.readyState;
-	if ( state === 'interactive' || state === 'complete' ) {
+	if (state === 'interactive' || state === 'complete') {
 		callback();
-	}
-	else {
+	} else {
 		document.addEventListener('DOMContentLoaded', callback);
 	}
 };
-
 
 domReady(function () {
 	const projectname = document.createElement('a');
@@ -15,8 +13,8 @@ domReady(function () {
 	projectname.text = 'aureooms/js-pseudo-random';
 	projectname.href = './index.html';
 
-	const header = document.getElementsByTagName('header')[0];
-	header.insertBefore(projectname,header.firstChild);
+	const header = document.querySelectorAll('header')[0];
+	header.insertBefore(projectname, header.firstChild);
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
 	testlink.href = 'https://coveralls.io/github/aureooms/js-pseudo-random';
@@ -25,7 +23,7 @@ domReady(function () {
 	const searchBox = document.querySelector('.search-box');
 	const input = document.querySelector('.search-input');
 
-	// active search box when focus on searchBox.
+	// Active search box when focus on searchBox.
 	input.addEventListener('focus', function () {
 		searchBox.classList.add('active');
 	});
