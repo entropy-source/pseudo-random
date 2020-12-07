@@ -4,13 +4,19 @@
 Pseudorandom number generators for JavaScript.
 See [docs](https://aureooms.github.io/js-pseudo-random/index.html).
 
+> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
+> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 ```js
-import {SplitMix64} from '@aureooms/js-pseudo-random';
+import {
+  splitmix64,
+  nextFloat,
+  nextUint64,
+} from '@aureooms/js-pseudo-random';
 
 const seed = [0, 0]; // Two 32-bit signed integers.
-const prng = new SplitMix64(seed);
-prng.next(); // 64 random bits as two 32-bit signed integers.
-prng.nextFloat(); // a random float in the range [0, 1[
+const prng = splitmix64(seed);
+nextUint64(prng); // 64 random bits as two 32-bit signed integers (compatible with @aureooms/js-uint64).
+nextFloat(prng); // A random float in the range [0, 1[.
 ```
 
 [![License](https://img.shields.io/github/license/aureooms/js-pseudo-random.svg)](https://raw.githubusercontent.com/aureooms/js-pseudo-random/main/LICENSE)
