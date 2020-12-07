@@ -37,3 +37,4 @@ nextFloat(prng); // A random float in the range [0, 1[.
 ## :scroll: References
 
   - [The PRNG shootout](http://prng.di.unimi.it)
+  - [Testing common random-number generators](https://github.com/lemire/testingRNG)
