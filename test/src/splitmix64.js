@@ -1,6 +1,7 @@
 import test from 'ava';
 import {range, map} from '@aureooms/js-itertools';
 
+import {get64} from '@aureooms/js-uint64';
 import {splitmix64, nextUint64, nextFloat} from '../../src';
 
 test('https://rosettacode.org/wiki/Pseudo-random_numbers/Splitmix64 #1', (t) => {
@@ -35,4 +36,19 @@ test('https://rosettacode.org/wiki/Pseudo-random_numbers/Splitmix64 #2', (t) => 
 	}
 
 	t.deepEqual(histogram, [20027, 19892, 20073, 19978, 20030]);
+});
+
+test('Example found at https://github.com/dgryski/go-xoroshiro/blob/ea5ca0291510c1f8b16321d610ae73e1006d499f/xoro_test.go#L9', (t) => {
+	const seed = [0, 0xdeadbeef];
+	const prng = splitmix64(seed);
+	t.deepEqual(nextUint64(prng), get64(0x4adfb90f, 0x68c9eb9b)); // 5395234354446855067
+	t.deepEqual(nextUint64(prng), get64(0xde586a31, 0x41a10922)); // 16021672434157553954
+	t.deepEqual(nextUint64(prng), get64(0x021fbc2f, 0x8e1cfc1d)); // 153047824787635229
+	t.deepEqual(nextUint64(prng), get64(0x7466ce73, 0x7be16790)); // 8387618351419058064
+	t.deepEqual(nextUint64(prng), get64(0x3bfa8764, 0xf685bd1c)); // 4321915660117851420
+	t.deepEqual(nextUint64(prng), get64(0xab203e50, 0x3cb55b3f)); // 12330924294077242175
+	t.deepEqual(nextUint64(prng), get64(0x5a2fdc2b, 0xf68cedb3)); // 6498654868697050547
+	t.deepEqual(nextUint64(prng), get64(0xb30a4ccf, 0x430b1b5a)); // 12901208535622949722
+	t.deepEqual(nextUint64(prng), get64(0x0a904150, 0x39bd5985)); // 761180149847513477
+	t.deepEqual(nextUint64(prng), get64(0x26ae5084, 0x7745eb7e)); // 2787253749255891838
 });
