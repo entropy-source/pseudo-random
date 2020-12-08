@@ -2,7 +2,7 @@ import test from 'ava';
 
 import {get64} from '@aureooms/js-uint64';
 
-import {splitmix64, xoroshiro128plus, nextInt32, nextUint64} from '../../src';
+import {splitmix64, xoroshiro128plus, fill, nextUint64} from '../../src';
 
 test('Example found at https://github.com/dgryski/go-xoroshiro/blob/ea5ca0291510c1f8b16321d610ae73e1006d499f/xoro_test.go#L28', (t) => {
 	const prng = xoroshiro128plus([0, 1, 0, 2], {a: 55, b: 14, c: 36});
@@ -53,12 +53,11 @@ test('Example found at https://github.com/dgryski/go-xoroshiro/blob/ea5ca0291510
 });
 
 test('Example found at https://github.com/dgryski/go-xoroshiro/blob/ea5ca0291510c1f8b16321d610ae73e1006d499f/xoro_test.go#L80', (t) => {
-	const seed = splitmix64([0x0ddc0ffe, 0xebadf00d]);
+	const seeder = splitmix64([0x0ddc0ffe, 0xebadf00d]);
+	const seed = new Int32Array(4);
+	fill(seeder, seed);
 
-	const prng = xoroshiro128plus(
-		[nextInt32(seed), nextInt32(seed), nextInt32(seed), nextInt32(seed)],
-		{a: 55, b: 14, c: 36},
-	);
+	const prng = xoroshiro128plus(seed, {a: 55, b: 14, c: 36});
 
 	t.deepEqual(nextUint64(prng), get64(0xa3f4ee8f, 0x1df50a08)); // 11814330020949985800
 	t.deepEqual(nextUint64(prng), get64(0xa3febba4, 0x5a9ce9c5)); // 11817088786836023749

@@ -2,7 +2,7 @@ import test from 'ava';
 import {range, map} from '@aureooms/js-itertools';
 
 import {get64} from '@aureooms/js-uint64';
-import {splitmix64, nextUint64, nextFloat} from '../../src';
+import {splitmix64, nextUint64, nextFloat64} from '../../src';
 
 test('https://rosettacode.org/wiki/Pseudo-random_numbers/Splitmix64 #1', (t) => {
 	/**
@@ -29,7 +29,7 @@ test('https://rosettacode.org/wiki/Pseudo-random_numbers/Splitmix64 #2', (t) => 
 	const prng = splitmix64(seed);
 	const histogram = new Array(5).fill(0);
 	for (const k of map(
-		() => Math.floor(nextFloat(prng) * 5) | 0,
+		() => Math.floor(nextFloat64(prng) * 5) | 0,
 		range(100000),
 	)) {
 		++histogram[k];

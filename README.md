@@ -9,14 +9,14 @@ See [docs](https://aureooms.github.io/js-pseudo-random/index.html).
 ```js
 import {
   splitmix64,
-  nextFloat,
+  nextFloat64,
   nextUint64,
 } from '@aureooms/js-pseudo-random';
 
 const seed = [0, 0]; // Two 32-bit signed integers.
 const prng = splitmix64(seed);
 nextUint64(prng); // 64 random bits as two 32-bit signed integers (compatible with @aureooms/js-uint64).
-nextFloat(prng); // A random float in the range [0, 1[.
+nextFloat64(prng); // A random double in the range [0, 1[.
 ```
 
 [![License](https://img.shields.io/github/license/aureooms/js-pseudo-random.svg)](https://raw.githubusercontent.com/aureooms/js-pseudo-random/main/LICENSE)
