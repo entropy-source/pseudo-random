@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl">
-  <title data-ice="title">Home | @aureooms/js-pseudo-random</title>
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/splitmix64.js | @aureooms/js-pseudo-random</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -45,41 +45,21 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-game-die---a-href--https---aureooms-github-io-js-pseudo-random---aureooms-js-pseudo-random--a-">:game_die: <a href="https://aureooms.github.io/js-pseudo-random">@aureooms/js-pseudo-random</a></h1><p>Pseudorandom number generators for JavaScript.
-See <a href="https://aureooms.github.io/js-pseudo-random/index.html">docs</a>.</p>
-<blockquote>
-<p>:warning: The code requires <code>regeneratorRuntime</code> to be defined, for instance by importing
-<a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.
-<code>`</code>js
-import {
-  splitmix64,
-  nextFloat,
-  nextUint64,
-} from &apos;@aureooms/js-pseudo-random&apos;;</p>
-</blockquote>
-<p>const seed = [0, 0]; // Two 32-bit signed integers.
-const prng = splitmix64(seed);
-nextUint64(prng); // 64 random bits as two 32-bit signed integers (compatible with @aureooms/js-uint64).
-nextFloat(prng); // A random float in the range [0, 1[.
-<code>`</code></p>
-<p><a href="https://raw.githubusercontent.com/aureooms/js-pseudo-random/main/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-pseudo-random.svg" alt="License"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-pseudo-random"><img src="https://img.shields.io/npm/v/@aureooms/js-pseudo-random.svg" alt="Version"></a>
-<a href="https://travis-ci.org/aureooms/js-pseudo-random/branches"><img src="https://img.shields.io/travis/aureooms/js-pseudo-random/main.svg" alt="Build"></a>
-<a href="https://david-dm.org/aureooms/js-pseudo-random"><img src="https://img.shields.io/david/aureooms/js-pseudo-random.svg" alt="Dependencies"></a>
-<a href="https://david-dm.org/aureooms/js-pseudo-random?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-pseudo-random.svg" alt="Dev dependencies"></a>
-<a href="https://github.com/aureooms/js-pseudo-random/issues"><img src="https://img.shields.io/github/issues/aureooms/js-pseudo-random.svg" alt="GitHub issues"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-pseudo-random"><img src="https://img.shields.io/npm/dm/@aureooms/js-pseudo-random.svg" alt="Downloads"></a></p>
-<p><a href="https://codeclimate.com/github/aureooms/js-pseudo-random/issues"><img src="https://img.shields.io/codeclimate/issues/aureooms/js-pseudo-random.svg" alt="Code issues"></a>
-<a href="https://codeclimate.com/github/aureooms/js-pseudo-random/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/aureooms/js-pseudo-random.svg" alt="Code maintainability"></a>
-<a href="https://codecov.io/gh/aureooms/js-pseudo-random"><img src="https://img.shields.io/codecov/c/gh/aureooms/js-pseudo-random/main.svg" alt="Code coverage (cov)"></a>
-<a href="https://codeclimate.com/github/aureooms/js-pseudo-random/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/aureooms/js-pseudo-random.svg" alt="Code technical debt"></a>
-<a href="https://aureooms.github.io/js-pseudo-random/source.html"><img src="https://aureooms.github.io/js-pseudo-random/badge.svg" alt="Documentation"></a>
-<a href="https://bundlephobia.com/result?p=@aureooms/js-pseudo-random"><img src="https://img.shields.io/bundlephobia/minzip/@aureooms/js-pseudo-random" alt="Package size"></a></p>
-<h2 id="-scroll--references">:scroll: References</h2><ul>
-<li><a href="http://prng.di.unimi.it">The PRNG shootout</a></li>
-<li><a href="https://github.com/lemire/testingRNG">Testing common random-number generators</a></li>
-</ul>
-</div>
+<div class="content" data-ice="content"><h1 data-ice="title">src/splitmix64.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {add64, mul64, xor64, shr64, get64} from &apos;@aureooms/js-uint64&apos;;
+
+export default function* splitmix64(seed) {
+	let state = get64(...seed);
+	while (true) {
+		state = add64(state, get64(0x9e3779b9, 0x7f4a7c15));
+		let z = state;
+		z = mul64(xor64(z, shr64(z, 30)), get64(0xbf58476d, 0x1ce4e5b9));
+		z = mul64(xor64(z, shr64(z, 27)), get64(0x94d049bb, 0x133111eb));
+		yield* xor64(z, shr64(z, 31));
+	}
+}
+</code></pre>
+
 </div>
 
 <footer class="footer">

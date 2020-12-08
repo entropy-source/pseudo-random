@@ -1,17 +1,101 @@
 {
-  "coverage": "0%",
-  "expectCount": 5,
-  "actualCount": 0,
+  "coverage": "4.16%",
+  "expectCount": 24,
+  "actualCount": 1,
   "files": {
-    "src/SplitMix64.js": {
-      "expectCount": 5,
+    "src/genBit.js": {
+      "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        3,
+        1
+      ]
+    },
+    "src/genBoolean.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/genByte.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/genInt32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/genUint16.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/genUint64.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextFloat.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextInt32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextUint32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextUint64.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/splitmix64.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/xoroshiro128plus.js": {
+      "expectCount": 13,
+      "actualCount": 1,
+      "undocumentLines": [
         4,
-        5,
         8,
-        16
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        20
       ]
     }
   }

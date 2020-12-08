@@ -1,9 +1,75 @@
 window.esdocSearchIndex = [
   [
+    "@aureooms/js-pseudo-random/src/genbit.js~genbit",
+    "function/index.html#static-function-genBit",
+    "<span>genBit</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/genBit.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/genboolean.js~genboolean",
+    "function/index.html#static-function-genBoolean",
+    "<span>genBoolean</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/genBoolean.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/genbyte.js~genbyte",
+    "function/index.html#static-function-genByte",
+    "<span>genByte</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/genByte.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/genint32.js~genint32",
+    "function/index.html#static-function-genInt32",
+    "<span>genInt32</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/genInt32.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/genuint16.js~genuint16",
+    "function/index.html#static-function-genUint16",
+    "<span>genUint16</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/genUint16.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/genuint64.js~genuint64",
+    "function/index.html#static-function-genUint64",
+    "<span>genUint64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/genUint64.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextfloat.js~nextfloat",
+    "function/index.html#static-function-nextFloat",
+    "<span>nextFloat</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextFloat.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextint32.js~nextint32",
+    "function/index.html#static-function-nextInt32",
+    "<span>nextInt32</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextInt32.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextuint32.js~nextuint32",
+    "function/index.html#static-function-nextUint32",
+    "<span>nextUint32</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextUint32.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextuint64.js~nextuint64",
+    "function/index.html#static-function-nextUint64",
+    "<span>nextUint64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextUint64.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-pseudo-random/src/splitmix64.js~splitmix64",
-    "class/src/SplitMix64.js~SplitMix64.html",
-    "<span>SplitMix64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/SplitMix64.js</span>",
-    "class"
+    "function/index.html#static-function-splitmix64",
+    "<span>splitmix64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/splitmix64.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/xoroshiro128plus.js~xoroshiro128plus",
+    "function/index.html#static-function-xoroshiro128plus",
+    "<span>xoroshiro128plus</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/xoroshiro128plus.js</span>",
+    "function"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -288,39 +354,87 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/splitmix64.js",
-    "file/src/SplitMix64.js.html",
-    "src/SplitMix64.js",
+    "src/genbit.js",
+    "file/src/genBit.js.html",
+    "src/genBit.js",
     "file"
   ],
   [
-    "src/splitmix64.js~splitmix64#constructor",
-    "class/src/SplitMix64.js~SplitMix64.html#instance-constructor-constructor",
-    "src/SplitMix64.js~SplitMix64#constructor",
-    "method"
+    "src/genboolean.js",
+    "file/src/genBoolean.js.html",
+    "src/genBoolean.js",
+    "file"
   ],
   [
-    "src/splitmix64.js~splitmix64#next",
-    "class/src/SplitMix64.js~SplitMix64.html#instance-method-next",
-    "src/SplitMix64.js~SplitMix64#next",
-    "method"
+    "src/genbyte.js",
+    "file/src/genByte.js.html",
+    "src/genByte.js",
+    "file"
   ],
   [
-    "src/splitmix64.js~splitmix64#nextfloat",
-    "class/src/SplitMix64.js~SplitMix64.html#instance-method-nextFloat",
-    "src/SplitMix64.js~SplitMix64#nextFloat",
-    "method"
+    "src/genint32.js",
+    "file/src/genInt32.js.html",
+    "src/genInt32.js",
+    "file"
   ],
   [
-    "src/splitmix64.js~splitmix64#state",
-    "class/src/SplitMix64.js~SplitMix64.html#instance-member-state",
-    "src/SplitMix64.js~SplitMix64#state",
-    "member"
+    "src/genuint16.js",
+    "file/src/genUint16.js.html",
+    "src/genUint16.js",
+    "file"
+  ],
+  [
+    "src/genuint64.js",
+    "file/src/genUint64.js.html",
+    "src/genUint64.js",
+    "file"
   ],
   [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
+    "file"
+  ],
+  [
+    "src/nextfloat.js",
+    "file/src/nextFloat.js.html",
+    "src/nextFloat.js",
+    "file"
+  ],
+  [
+    "src/nextint32.js",
+    "file/src/nextInt32.js.html",
+    "src/nextInt32.js",
+    "file"
+  ],
+  [
+    "src/nextuint32.js",
+    "file/src/nextUint32.js.html",
+    "src/nextUint32.js",
+    "file"
+  ],
+  [
+    "src/nextuint64.js",
+    "file/src/nextUint64.js.html",
+    "src/nextUint64.js",
+    "file"
+  ],
+  [
+    "src/splitmix64.js",
+    "file/src/splitmix64.js.html",
+    "src/splitmix64.js",
+    "file"
+  ],
+  [
+    "src/xoroshiro128plus.js",
+    "file/src/xoroshiro128plus.js.html",
+    "src/xoroshiro128plus.js",
+    "file"
+  ],
+  [
+    "src/xoshiro128plus.js",
+    "file/src/xoshiro128plus.js.html",
+    "src/xoshiro128plus.js",
     "file"
   ]
 ]
