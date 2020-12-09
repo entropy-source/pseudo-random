@@ -1,5 +1,17 @@
 window.esdocSearchIndex = [
   [
+    "@aureooms/js-pseudo-random/src/_fill.js~_fill",
+    "function/index.html#static-function-_fill",
+    "<span>_fill</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/_fill.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/fill.js~fill",
+    "function/index.html#static-function-fill",
+    "<span>fill</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/fill.js</span>",
+    "function"
+  ],
+  [
     "@aureooms/js-pseudo-random/src/genbit.js~genbit",
     "function/index.html#static-function-genBit",
     "<span>genBit</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/genBit.js</span>",
@@ -36,15 +48,39 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "@aureooms/js-pseudo-random/src/nextfloat.js~nextfloat",
-    "function/index.html#static-function-nextFloat",
-    "<span>nextFloat</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextFloat.js</span>",
+    "@aureooms/js-pseudo-random/src/nextbigint64.js~nextbigint64",
+    "function/index.html#static-function-nextBigInt64",
+    "<span>nextBigInt64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextBigInt64.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextbiguint64.js~nextbiguint64",
+    "function/index.html#static-function-nextBigUint64",
+    "<span>nextBigUint64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextBigUint64.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextfloat32.js~nextfloat32",
+    "function/index.html#static-function-nextFloat32",
+    "<span>nextFloat32</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextFloat32.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextfloat64.js~nextfloat64",
+    "function/index.html#static-function-nextFloat64",
+    "<span>nextFloat64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextFloat64.js</span>",
     "function"
   ],
   [
     "@aureooms/js-pseudo-random/src/nextint32.js~nextint32",
     "function/index.html#static-function-nextInt32",
     "<span>nextInt32</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextInt32.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextuint16.js~nextuint16",
+    "function/index.html#static-function-nextUint16",
+    "<span>nextUint16</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextUint16.js</span>",
     "function"
   ],
   [
@@ -57,6 +93,12 @@ window.esdocSearchIndex = [
     "@aureooms/js-pseudo-random/src/nextuint64.js~nextuint64",
     "function/index.html#static-function-nextUint64",
     "<span>nextUint64</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextUint64.js</span>",
+    "function"
+  ],
+  [
+    "@aureooms/js-pseudo-random/src/nextuint8.js~nextuint8",
+    "function/index.html#static-function-nextUint8",
+    "<span>nextUint8</span> <span class=\"search-result-import-path\">@aureooms/js-pseudo-random/src/nextUint8.js</span>",
     "function"
   ],
   [
@@ -354,6 +396,18 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/_fill.js",
+    "file/src/_fill.js.html",
+    "src/_fill.js",
+    "file"
+  ],
+  [
+    "src/fill.js",
+    "file/src/fill.js.html",
+    "src/fill.js",
+    "file"
+  ],
+  [
     "src/genbit.js",
     "file/src/genBit.js.html",
     "src/genBit.js",
@@ -396,15 +450,39 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/nextfloat.js",
-    "file/src/nextFloat.js.html",
-    "src/nextFloat.js",
+    "src/nextbigint64.js",
+    "file/src/nextBigInt64.js.html",
+    "src/nextBigInt64.js",
+    "file"
+  ],
+  [
+    "src/nextbiguint64.js",
+    "file/src/nextBigUint64.js.html",
+    "src/nextBigUint64.js",
+    "file"
+  ],
+  [
+    "src/nextfloat32.js",
+    "file/src/nextFloat32.js.html",
+    "src/nextFloat32.js",
+    "file"
+  ],
+  [
+    "src/nextfloat64.js",
+    "file/src/nextFloat64.js.html",
+    "src/nextFloat64.js",
     "file"
   ],
   [
     "src/nextint32.js",
     "file/src/nextInt32.js.html",
     "src/nextInt32.js",
+    "file"
+  ],
+  [
+    "src/nextuint16.js",
+    "file/src/nextUint16.js.html",
+    "src/nextUint16.js",
     "file"
   ],
   [
@@ -420,6 +498,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/nextuint8.js",
+    "file/src/nextUint8.js.html",
+    "src/nextUint8.js",
+    "file"
+  ],
+  [
     "src/splitmix64.js",
     "file/src/splitmix64.js.html",
     "src/splitmix64.js",
@@ -429,12 +513,6 @@ window.esdocSearchIndex = [
     "src/xoroshiro128plus.js",
     "file/src/xoroshiro128plus.js.html",
     "src/xoroshiro128plus.js",
-    "file"
-  ],
-  [
-    "src/xoshiro128plus.js",
-    "file/src/xoshiro128plus.js.html",
-    "src/xoshiro128plus.js",
     "file"
   ]
 ]

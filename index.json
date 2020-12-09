@@ -566,6 +566,130 @@
   {
     "__docId__": 48,
     "kind": "file",
+    "name": "src/_fill.js",
+    "content": "const _fill = (next, prng, array, i = 0, j = array.length) => {\n\tfor (; i < j; ++i) {\n\t\tarray[i] = next(prng);\n\t}\n};\n\nexport default _fill;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/_fill.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "_fill",
+    "memberof": "src/_fill.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/_fill.js~_fill",
+    "access": "private",
+    "export": true,
+    "importPath": "@aureooms/js-pseudo-random/src/_fill.js",
+    "importStyle": "_fill",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "next",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "prng",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "array",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "i",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 0,
+        "defaultValue": "0"
+      },
+      {
+        "name": "j",
+        "optional": true,
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "src/fill.js",
+    "content": "import _fill from './_fill';\nimport nextUint8 from './nextUint8';\nimport nextUint16 from './nextUint16';\nimport nextInt32 from './nextInt32';\nimport nextFloat32 from './nextFloat32';\nimport nextFloat64 from './nextFloat64';\nimport nextBigInt64 from './nextBigInt64';\nimport nextBigUint64 from './nextBigUint64';\n\nconst fill = (prng, array, i, j) => {\n\tswitch (array.constructor) {\n\t\tcase ArrayBuffer:\n\t\t\treturn _fill(nextUint8, new Uint8Array(array), i, j);\n\n\t\tcase Int8Array:\n\t\tcase Uint8Array:\n\t\tcase Uint8ClampedArray:\n\t\t\treturn _fill(\n\t\t\t\tnextUint8,\n\t\t\t\tprng,\n\t\t\t\tnew Uint8Array(array.buffer, array.byteOffset, array.byteLength),\n\t\t\t\ti,\n\t\t\t\tj,\n\t\t\t);\n\n\t\tcase Int16Array:\n\t\tcase Uint16Array:\n\t\t\treturn _fill(\n\t\t\t\tnextUint16,\n\t\t\t\tprng,\n\t\t\t\tnew Uint16Array(array.buffer, array.byteOffset, array.length),\n\t\t\t\ti,\n\t\t\t\tj,\n\t\t\t);\n\n\t\tcase Int32Array:\n\t\tcase Uint32Array:\n\t\t\treturn _fill(\n\t\t\t\tnextInt32,\n\t\t\t\tprng,\n\t\t\t\tnew Int32Array(array.buffer, array.byteOffset, array.length),\n\t\t\t\ti,\n\t\t\t\tj,\n\t\t\t);\n\n\t\tcase Float32Array:\n\t\t\treturn _fill(nextFloat32, prng, array, i, j);\n\n\t\tcase Float64Array:\n\t\t\treturn _fill(nextFloat64, prng, array, i, j);\n\n\t\tcase BigInt64Array:\n\t\t\treturn _fill(nextBigInt64, prng, array, i, j);\n\n\t\tcase BigUint64Array:\n\t\t\treturn _fill(nextBigUint64, prng, array, i, j);\n\n\t\tdefault:\n\t\t\tthrow new Error(\n\t\t\t\t`fill(prng, array, ...): array with constructor '${array.constructor.name}' not implemented`,\n\t\t\t);\n\t}\n};\n\nexport default fill;\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/fill.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "fill",
+    "memberof": "src/fill.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/fill.js~fill",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-pseudo-random/src/fill.js",
+    "importStyle": "fill",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [
+      {
+        "name": "prng",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "array",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "i",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "j",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "file",
     "name": "src/genBit.js",
     "content": "export default function* genBit(prng) {\n\tfor (const x of prng) {\n\t\tyield (x >>> 0) & 1;\n\t\tyield (x >>> 1) & 1;\n\t\tyield (x >>> 2) & 1;\n\t\tyield (x >>> 3) & 1;\n\t\tyield (x >>> 4) & 1;\n\t\tyield (x >>> 5) & 1;\n\t\tyield (x >>> 6) & 1;\n\t\tyield (x >>> 7) & 1;\n\t\tyield (x >>> 8) & 1;\n\t\tyield (x >>> 9) & 1;\n\t\tyield (x >>> 10) & 1;\n\t\tyield (x >>> 11) & 1;\n\t\tyield (x >>> 12) & 1;\n\t\tyield (x >>> 13) & 1;\n\t\tyield (x >>> 14) & 1;\n\t\tyield (x >>> 15) & 1;\n\t\tyield (x >>> 16) & 1;\n\t\tyield (x >>> 17) & 1;\n\t\tyield (x >>> 18) & 1;\n\t\tyield (x >>> 19) & 1;\n\t\tyield (x >>> 20) & 1;\n\t\tyield (x >>> 21) & 1;\n\t\tyield (x >>> 22) & 1;\n\t\tyield (x >>> 23) & 1;\n\t\tyield (x >>> 24) & 1;\n\t\tyield (x >>> 25) & 1;\n\t\tyield (x >>> 26) & 1;\n\t\tyield (x >>> 27) & 1;\n\t\tyield (x >>> 28) & 1;\n\t\tyield (x >>> 29) & 1;\n\t\tyield (x >>> 30) & 1;\n\t\tyield (x >>> 31) & 1;\n\t}\n}\n",
     "static": true,
@@ -575,7 +699,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 49,
+    "__docId__": 53,
     "kind": "function",
     "name": "genBit",
     "memberof": "src/genBit.js",
@@ -601,7 +725,7 @@
     "return": null
   },
   {
-    "__docId__": 50,
+    "__docId__": 54,
     "kind": "file",
     "name": "src/genBoolean.js",
     "content": "import genBit from './genBit';\n\nexport default function* genBoolean(prng) {\n\tfor (const bit of genBit(prng)) yield Boolean(bit);\n}\n",
@@ -612,7 +736,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 51,
+    "__docId__": 55,
     "kind": "function",
     "name": "genBoolean",
     "memberof": "src/genBoolean.js",
@@ -638,7 +762,7 @@
     "return": null
   },
   {
-    "__docId__": 52,
+    "__docId__": 56,
     "kind": "file",
     "name": "src/genByte.js",
     "content": "export default function* genByte(prng) {\n\tfor (const x of prng) {\n\t\tyield (x >>> 0) & 0xff;\n\t\tyield (x >>> 8) & 0xff;\n\t\tyield (x >>> 16) & 0xff;\n\t\tyield (x >>> 24) & 0xff;\n\t}\n}\n",
@@ -649,7 +773,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 53,
+    "__docId__": 57,
     "kind": "function",
     "name": "genByte",
     "memberof": "src/genByte.js",
@@ -675,7 +799,7 @@
     "return": null
   },
   {
-    "__docId__": 54,
+    "__docId__": 58,
     "kind": "file",
     "name": "src/genInt32.js",
     "content": "export default function genInt32(prng) {\n\treturn prng;\n}\n",
@@ -686,7 +810,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 55,
+    "__docId__": 59,
     "kind": "function",
     "name": "genInt32",
     "memberof": "src/genInt32.js",
@@ -716,7 +840,7 @@
     }
   },
   {
-    "__docId__": 56,
+    "__docId__": 60,
     "kind": "file",
     "name": "src/genUint16.js",
     "content": "export default function* genUint16(prng) {\n\tfor (const x of prng) {\n\t\tyield (x >>> 0) & 0xffff;\n\t\tyield (x >>> 16) & 0xffff;\n\t}\n}\n",
@@ -727,7 +851,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 57,
+    "__docId__": 61,
     "kind": "function",
     "name": "genUint16",
     "memberof": "src/genUint16.js",
@@ -753,7 +877,7 @@
     "return": null
   },
   {
-    "__docId__": 58,
+    "__docId__": 62,
     "kind": "file",
     "name": "src/genUint64.js",
     "content": "export default function* genUint64(prng) {\n\twhile (true) {\n\t\tyield [prng.next().value, prng.next().value];\n\t}\n}\n",
@@ -764,7 +888,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 59,
+    "__docId__": 63,
     "kind": "function",
     "name": "genUint64",
     "memberof": "src/genUint64.js",
@@ -790,10 +914,10 @@
     "return": null
   },
   {
-    "__docId__": 60,
+    "__docId__": 64,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import nextFloat from './nextFloat';\nimport nextInt32 from './nextInt32';\nimport nextUint64 from './nextUint64';\nimport splitmix64 from './splitmix64';\nimport xoroshiro128plus from './xoroshiro128plus';\n\n/* eslint import/no-anonymous-default-export: [2, {\"allowObject\": true}] */\nexport default {\n\tnextFloat,\n\tnextInt32,\n\tnextUint64,\n\tsplitmix64,\n\txoroshiro128plus,\n};\n\nexport {nextFloat, nextInt32, nextUint64, splitmix64, xoroshiro128plus};\n",
+    "content": "import fill from './fill';\nimport nextFloat64 from './nextFloat64';\nimport nextInt32 from './nextInt32';\nimport nextUint64 from './nextUint64';\nimport splitmix64 from './splitmix64';\nimport xoroshiro128plus from './xoroshiro128plus';\n\n/* eslint import/no-anonymous-default-export: [2, {\"allowObject\": true}] */\nexport default {\n\tfill,\n\tnextFloat64,\n\tnextInt32,\n\tnextUint64,\n\tsplitmix64,\n\txoroshiro128plus,\n};\n\nexport {fill, nextFloat64, nextInt32, nextUint64, splitmix64, xoroshiro128plus};\n",
     "static": true,
     "longname": "/home/aureooms/dev/js/js-pseudo-random/src/index.js",
     "access": "public",
@@ -801,29 +925,70 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 61,
+    "__docId__": 65,
     "kind": "file",
-    "name": "src/nextFloat.js",
-    "content": "export default function nextFloat(prng) {\n\tconst a = prng.next().value;\n\tconst b = prng.next().value;\n\treturn (a >>> 0) / 2 ** 32 + (b >>> 0) / 2 ** 64;\n}\n",
+    "name": "src/nextBigInt64.js",
+    "content": "import nextBigUint64 from './nextBigUint64';\n\nexport default function nextBigInt64(prng) {\n\treturn nextBigUint64(prng) - BigInt(2 ** 63);\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/nextFloat.js",
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/nextBigInt64.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 62,
+    "__docId__": 66,
     "kind": "function",
-    "name": "nextFloat",
-    "memberof": "src/nextFloat.js",
+    "name": "nextBigInt64",
+    "memberof": "src/nextBigInt64.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/nextFloat.js~nextFloat",
+    "longname": "src/nextBigInt64.js~nextBigInt64",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-pseudo-random/src/nextFloat.js",
-    "importStyle": "nextFloat",
+    "importPath": "@aureooms/js-pseudo-random/src/nextBigInt64.js",
+    "importStyle": "nextBigInt64",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "prng",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "name": "src/nextBigUint64.js",
+    "content": "export default function nextBigUint64(prng) {\n\tconst a = prng.next().value;\n\tconst b = prng.next().value;\n\treturn BigInt(a) * BigInt(2 ** 32) + BigInt(b);\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/nextBigUint64.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 68,
+    "kind": "function",
+    "name": "nextBigUint64",
+    "memberof": "src/nextBigUint64.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/nextBigUint64.js~nextBigUint64",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-pseudo-random/src/nextBigUint64.js",
+    "importStyle": "nextBigUint64",
     "description": null,
     "lineNumber": 1,
     "undocument": true,
@@ -842,7 +1007,89 @@
     }
   },
   {
-    "__docId__": 63,
+    "__docId__": 69,
+    "kind": "file",
+    "name": "src/nextFloat32.js",
+    "content": "export default function nextFloat32(prng) {\n\tconst x = prng.next().value;\n\treturn (x >>> 9) / 2 ** 23;\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/nextFloat32.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "nextFloat32",
+    "memberof": "src/nextFloat32.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/nextFloat32.js~nextFloat32",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-pseudo-random/src/nextFloat32.js",
+    "importStyle": "nextFloat32",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "prng",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "file",
+    "name": "src/nextFloat64.js",
+    "content": "export default function nextFloat64(prng) {\n\tconst a = prng.next().value;\n\tconst b = prng.next().value;\n\treturn (a >>> 0) / 2 ** 32 + (b >>> 0) / 2 ** 64;\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/nextFloat64.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 72,
+    "kind": "function",
+    "name": "nextFloat64",
+    "memberof": "src/nextFloat64.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/nextFloat64.js~nextFloat64",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-pseudo-random/src/nextFloat64.js",
+    "importStyle": "nextFloat64",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "prng",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 73,
     "kind": "file",
     "name": "src/nextInt32.js",
     "content": "export default function nextInt32(prng) {\n\treturn prng.next().value;\n}\n",
@@ -853,7 +1100,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 64,
+    "__docId__": 74,
     "kind": "function",
     "name": "nextInt32",
     "memberof": "src/nextInt32.js",
@@ -883,7 +1130,48 @@
     }
   },
   {
-    "__docId__": 65,
+    "__docId__": 75,
+    "kind": "file",
+    "name": "src/nextUint16.js",
+    "content": "export default function nextUint16(prng) {\n\treturn (prng.next().value >>> 16) & 0xffff;\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/nextUint16.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 76,
+    "kind": "function",
+    "name": "nextUint16",
+    "memberof": "src/nextUint16.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/nextUint16.js~nextUint16",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-pseudo-random/src/nextUint16.js",
+    "importStyle": "nextUint16",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "prng",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 77,
     "kind": "file",
     "name": "src/nextUint32.js",
     "content": "export default function nextUint32(prng) {\n\treturn prng.next().value >>> 0;\n}\n",
@@ -894,7 +1182,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 66,
+    "__docId__": 78,
     "kind": "function",
     "name": "nextUint32",
     "memberof": "src/nextUint32.js",
@@ -924,7 +1212,7 @@
     }
   },
   {
-    "__docId__": 67,
+    "__docId__": 79,
     "kind": "file",
     "name": "src/nextUint64.js",
     "content": "export default function nextUint64(prng) {\n\treturn [prng.next().value, prng.next().value];\n}\n",
@@ -935,7 +1223,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 68,
+    "__docId__": 80,
     "kind": "function",
     "name": "nextUint64",
     "memberof": "src/nextUint64.js",
@@ -965,7 +1253,48 @@
     }
   },
   {
-    "__docId__": 69,
+    "__docId__": 81,
+    "kind": "file",
+    "name": "src/nextUint8.js",
+    "content": "export default function nextUint8(prng) {\n\treturn (prng.next().value >>> 24) & 0xff;\n}\n",
+    "static": true,
+    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/nextUint8.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 82,
+    "kind": "function",
+    "name": "nextUint8",
+    "memberof": "src/nextUint8.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/nextUint8.js~nextUint8",
+    "access": "public",
+    "export": true,
+    "importPath": "@aureooms/js-pseudo-random/src/nextUint8.js",
+    "importStyle": "nextUint8",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "prng",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
     "kind": "file",
     "name": "src/splitmix64.js",
     "content": "import {add64, mul64, xor64, shr64, get64} from '@aureooms/js-uint64';\n\nexport default function* splitmix64(seed) {\n\tlet state = get64(...seed);\n\twhile (true) {\n\t\tstate = add64(state, get64(0x9e3779b9, 0x7f4a7c15));\n\t\tlet z = state;\n\t\tz = mul64(xor64(z, shr64(z, 30)), get64(0xbf58476d, 0x1ce4e5b9));\n\t\tz = mul64(xor64(z, shr64(z, 27)), get64(0x94d049bb, 0x133111eb));\n\t\tyield* xor64(z, shr64(z, 31));\n\t}\n}\n",
@@ -976,7 +1305,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 70,
+    "__docId__": 84,
     "kind": "function",
     "name": "splitmix64",
     "memberof": "src/splitmix64.js",
@@ -1002,7 +1331,7 @@
     "return": null
   },
   {
-    "__docId__": 71,
+    "__docId__": 85,
     "kind": "file",
     "name": "src/xoroshiro128plus.js",
     "content": "import assert from 'assert';\nimport {rotl64, get64, add64, xor64, shl64} from '@aureooms/js-uint64';\n\nexport default function xoroshiro128plus(seed, options) {\n\treturn new XoRoShiRo128Plus(seed, options);\n}\n\nclass XoRoShiRo128Plus {\n\tconstructor(seed, {a, b, c, JUMP}) {\n\t\tthis.a = a || 24;\n\t\tthis.b = b || 16;\n\t\tthis.c = c || 37;\n\t\tthis.JUMP = JUMP || [0xd8f554a5, 0xdf900294, 0x4b3201fc, 0x170865df];\n\t\tthis.p = 0;\n\t\tthis.z = 0;\n\t\tthis.s0 = get64(seed[0], seed[1]);\n\t\tthis.s1 = get64(seed[2], seed[3]);\n\t}\n\n\tnext() {\n\t\tif (this.p === 0) {\n\t\t\tthis.p = 1;\n\t\t\tconst [value, z] = add64(this.s0, this.s1);\n\t\t\tthis.z = z;\n\t\t\treturn {value, done: false};\n\t\t}\n\n\t\tthis.p = 0;\n\t\tconst s0 = this.s0;\n\t\tconst s1 = xor64(s0, this.s1);\n\t\tthis.s0 = xor64(rotl64(s0, this.a), xor64(s1, shl64(s1, this.b)));\n\t\tthis.s1 = rotl64(s1, this.c);\n\t\treturn {value: this.z, done: false};\n\t}\n\n\t/**\n\t * This is the jump function for the generator. It is equivalent\n\t * to 2^64 calls to next(); it can be used to generate 2^64\n\t * non-overlapping subsequences for parallel computations.\n\t */\n\tjump() {\n\t\tassert(this.p === 0);\n\n\t\tlet s0 = get64(0, 0);\n\t\tlet s1 = get64(0, 0);\n\n\t\tfor (const jump of this.JUMP) {\n\t\t\tfor (let b = 0; b < 32; ++b) {\n\t\t\t\tif (jump & (1 << b)) {\n\t\t\t\t\ts0 = xor64(s0, this.s0);\n\t\t\t\t\ts1 = xor64(s1, this.s1);\n\t\t\t\t}\n\n\t\t\t\tthis.next();\n\t\t\t\tthis.next();\n\t\t\t}\n\t\t}\n\n\t\tthis.s0 = s0;\n\t\tthis.s1 = s1;\n\t}\n}\n",
@@ -1013,7 +1342,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 72,
+    "__docId__": 86,
     "kind": "function",
     "name": "xoroshiro128plus",
     "memberof": "src/xoroshiro128plus.js",
@@ -1049,7 +1378,7 @@
     }
   },
   {
-    "__docId__": 73,
+    "__docId__": 87,
     "kind": "class",
     "name": "XoRoShiRo128Plus",
     "memberof": "src/xoroshiro128plus.js",
@@ -1066,7 +1395,7 @@
     "ignore": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 88,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1080,7 +1409,7 @@
     "undocument": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 89,
     "kind": "member",
     "name": "a",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1097,7 +1426,7 @@
     }
   },
   {
-    "__docId__": 76,
+    "__docId__": 90,
     "kind": "member",
     "name": "b",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1114,7 +1443,7 @@
     }
   },
   {
-    "__docId__": 77,
+    "__docId__": 91,
     "kind": "member",
     "name": "c",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1131,7 +1460,7 @@
     }
   },
   {
-    "__docId__": 78,
+    "__docId__": 92,
     "kind": "member",
     "name": "JUMP",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1148,7 +1477,7 @@
     }
   },
   {
-    "__docId__": 79,
+    "__docId__": 93,
     "kind": "member",
     "name": "p",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1165,7 +1494,7 @@
     }
   },
   {
-    "__docId__": 80,
+    "__docId__": 94,
     "kind": "member",
     "name": "z",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1182,7 +1511,7 @@
     }
   },
   {
-    "__docId__": 81,
+    "__docId__": 95,
     "kind": "member",
     "name": "s0",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1199,7 +1528,7 @@
     }
   },
   {
-    "__docId__": 82,
+    "__docId__": 96,
     "kind": "member",
     "name": "s1",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1216,7 +1545,7 @@
     }
   },
   {
-    "__docId__": 83,
+    "__docId__": 97,
     "kind": "method",
     "name": "next",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1236,7 +1565,7 @@
     }
   },
   {
-    "__docId__": 89,
+    "__docId__": 103,
     "kind": "method",
     "name": "jump",
     "memberof": "src/xoroshiro128plus.js~XoRoShiRo128Plus",
@@ -1251,19 +1580,8 @@
     "return": null
   },
   {
-    "__docId__": 92,
-    "kind": "file",
-    "name": "src/xoshiro128plus.js",
-    "content": "// Import {rotl32} from '@aureooms/js-uint32';\n\n// static uint32_t s[4];\n\n// uint32_t next(void) {\n// const uint32_t result = s[0] + s[3];\n\n// const uint32_t t = s[1] << 9;\n\n// s[2] ^= s[0];\n// s[3] ^= s[1];\n// s[1] ^= s[2];\n// s[0] ^= s[3];\n\n// s[2] ^= t;\n\n// s[3] = rotl32(s[3], 11);\n\n// return result;\n// }\n\n// This is the jump function for the generator. It is equivalent\n// to 2^64 calls to next(); it can be used to generate 2^64\n// non-overlapping subsequences for parallel computations. */\n\n// void jump(void) {\n// static const uint32_t JUMP[] = { 0x8764000b, 0xf542d2d3, 0x6fa035c3, 0x77f2db5b };\n\n// uint32_t s0 = 0;\n// uint32_t s1 = 0;\n// uint32_t s2 = 0;\n// uint32_t s3 = 0;\n// for(int i = 0; i < sizeof JUMP / sizeof *JUMP; i++)\n// for(int b = 0; b < 32; b++) {\n// if (JUMP[i] & UINT32_C(1) << b) {\n// s0 ^= s[0];\n// s1 ^= s[1];\n// s2 ^= s[2];\n// s3 ^= s[3];\n// }\n// next();\n// }\n\n// s[0] = s0;\n// s[1] = s1;\n// s[2] = s2;\n// s[3] = s3;\n// }\n\n// This is the long-jump function for the generator. It is equivalent to\n// 2^96 calls to next(); it can be used to generate 2^32 starting points,\n// from each of which jump() will generate 2^32 non-overlapping\n// subsequences for parallel distributed computations. */\n\n// void long_jump(void) {\n// static const uint32_t LONG_JUMP[] = { 0xb523952e, 0x0b6f099f, 0xccf5a0ef, 0x1c580662 };\n\n// uint32_t s0 = 0;\n// uint32_t s1 = 0;\n// uint32_t s2 = 0;\n// uint32_t s3 = 0;\n// for(int i = 0; i < sizeof LONG_JUMP / sizeof *LONG_JUMP; i++)\n// for(int b = 0; b < 32; b++) {\n// if (LONG_JUMP[i] & UINT32_C(1) << b) {\n// s0 ^= s[0];\n// s1 ^= s[1];\n// s2 ^= s[2];\n// s3 ^= s[3];\n// }\n// next();\n// }\n\n// s[0] = s0;\n// s[1] = s1;\n// s[2] = s2;\n// s[3] = s3;\n// }\n",
-    "static": true,
-    "longname": "/home/aureooms/dev/js/js-pseudo-random/src/xoshiro128plus.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
     "kind": "index",
-    "content": ":game_die: [@aureooms/js-pseudo-random](https://aureooms.github.io/js-pseudo-random)\n==\n\nPseudorandom number generators for JavaScript.\nSee [docs](https://aureooms.github.io/js-pseudo-random/index.html).\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n```js\nimport {\n  splitmix64,\n  nextFloat,\n  nextUint64,\n} from '@aureooms/js-pseudo-random';\n\nconst seed = [0, 0]; // Two 32-bit signed integers.\nconst prng = splitmix64(seed);\nnextUint64(prng); // 64 random bits as two 32-bit signed integers (compatible with @aureooms/js-uint64).\nnextFloat(prng); // A random float in the range [0, 1[.\n```\n\n[![License](https://img.shields.io/github/license/aureooms/js-pseudo-random.svg)](https://raw.githubusercontent.com/aureooms/js-pseudo-random/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-pseudo-random.svg)](https://www.npmjs.org/package/@aureooms/js-pseudo-random)\n[![Build](https://img.shields.io/travis/aureooms/js-pseudo-random/main.svg)](https://travis-ci.org/aureooms/js-pseudo-random/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-pseudo-random.svg)](https://david-dm.org/aureooms/js-pseudo-random)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-pseudo-random.svg)](https://david-dm.org/aureooms/js-pseudo-random?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-pseudo-random.svg)](https://github.com/aureooms/js-pseudo-random/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-pseudo-random.svg)](https://www.npmjs.org/package/@aureooms/js-pseudo-random)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-pseudo-random/main.svg)](https://codecov.io/gh/aureooms/js-pseudo-random)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-pseudo-random/badge.svg)](https://aureooms.github.io/js-pseudo-random/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-pseudo-random)](https://bundlephobia.com/result?p=@aureooms/js-pseudo-random)\n\n## :scroll: References\n\n  - [The PRNG shootout](http://prng.di.unimi.it)\n  - [Testing common random-number generators](https://github.com/lemire/testingRNG)\n",
+    "content": ":game_die: [@aureooms/js-pseudo-random](https://aureooms.github.io/js-pseudo-random)\n==\n\nPseudorandom number generators for JavaScript.\nSee [docs](https://aureooms.github.io/js-pseudo-random/index.html).\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n```js\nimport {\n  splitmix64,\n  nextFloat64,\n  nextUint64,\n} from '@aureooms/js-pseudo-random';\n\nconst seed = [0, 0]; // Two 32-bit signed integers.\nconst prng = splitmix64(seed);\nnextUint64(prng); // 64 random bits as two 32-bit signed integers (compatible with @aureooms/js-uint64).\nnextFloat64(prng); // A random double in the range [0, 1[.\n```\n\n[![License](https://img.shields.io/github/license/aureooms/js-pseudo-random.svg)](https://raw.githubusercontent.com/aureooms/js-pseudo-random/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-pseudo-random.svg)](https://www.npmjs.org/package/@aureooms/js-pseudo-random)\n[![Build](https://img.shields.io/travis/aureooms/js-pseudo-random/main.svg)](https://travis-ci.org/aureooms/js-pseudo-random/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-pseudo-random.svg)](https://david-dm.org/aureooms/js-pseudo-random)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-pseudo-random.svg)](https://david-dm.org/aureooms/js-pseudo-random?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-pseudo-random.svg)](https://github.com/aureooms/js-pseudo-random/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-pseudo-random.svg)](https://www.npmjs.org/package/@aureooms/js-pseudo-random)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-pseudo-random/main.svg)](https://codecov.io/gh/aureooms/js-pseudo-random)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-pseudo-random/badge.svg)](https://aureooms.github.io/js-pseudo-random/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-pseudo-random)](https://bundlephobia.com/result?p=@aureooms/js-pseudo-random)\n\n## :scroll: References\n\n  - [The PRNG shootout](http://prng.di.unimi.it)\n  - [Testing common random-number generators](https://github.com/lemire/testingRNG)\n",
     "longname": "/home/aureooms/dev/js/js-pseudo-random/README.md",
     "name": "./README.md",
     "static": true,
@@ -1271,7 +1589,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-pseudo-random\",\n  \"description\": \"Pseudorandom number generators for JavaScript\",\n  \"version\": \"1.0.0\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"env\": {\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"development\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"production\": {\n        \"plugins\": [\n          \"babel-plugin-unassert\",\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-pseudo-random/issues\"\n  },\n  \"dependencies\": {\n    \"@aureooms/js-uint64\": \"^3.0.1\"\n  },\n  \"devDependencies\": {\n    \"@aureooms/js-itertools\": \"4.1.0\",\n    \"@babel/cli\": \"7.12.8\",\n    \"@babel/core\": \"7.12.9\",\n    \"@babel/preset-env\": \"7.12.7\",\n    \"@babel/register\": \"7.12.1\",\n    \"ava\": \"3.14.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"np\": \"7.0.0\",\n    \"nyc\": \"15.1.0\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.35.0\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-pseudo-random\",\n  \"keywords\": [\n    \"agpl\",\n    \"generator\",\n    \"javascript\",\n    \"number\",\n    \"prng\",\n    \"pseudo\",\n    \"random\",\n    \"xoroshiro\",\n    \"xoshiro\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-pseudo-random\"\n  },\n  \"scripts\": {\n    \"build\": \"babel --delete-dir-on-start --env-name production src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"dev\": \"npm run lint -- --fix && npm run cover -- -- -st --fail-fast\",\n    \"esdoc\": \"esdoc\",\n    \"lint\": \"xo\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava\",\n    \"travis\": \"npm run lint && npm run cover\"\n  },\n  \"sideEffects\": false,\n  \"xo\": {\n    \"prettier\": true,\n    \"ignores\": [\n      \"lib\"\n    ],\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "content": "{\n  \"name\": \"@aureooms/js-pseudo-random\",\n  \"description\": \"Pseudorandom number generators for JavaScript\",\n  \"version\": \"2.0.0\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"env\": {\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"development\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"production\": {\n        \"plugins\": [\n          \"babel-plugin-unassert\",\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-pseudo-random/issues\"\n  },\n  \"dependencies\": {\n    \"@aureooms/js-uint64\": \"^3.0.1\"\n  },\n  \"devDependencies\": {\n    \"@aureooms/js-itertools\": \"4.1.0\",\n    \"@babel/cli\": \"7.12.8\",\n    \"@babel/core\": \"7.12.9\",\n    \"@babel/preset-env\": \"7.12.7\",\n    \"@babel/register\": \"7.12.1\",\n    \"ava\": \"3.14.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"np\": \"7.0.0\",\n    \"nyc\": \"15.1.0\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"xo\": \"0.35.0\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-pseudo-random\",\n  \"keywords\": [\n    \"agpl\",\n    \"generator\",\n    \"javascript\",\n    \"number\",\n    \"prng\",\n    \"pseudo\",\n    \"random\",\n    \"xoroshiro\",\n    \"xoshiro\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-pseudo-random\"\n  },\n  \"scripts\": {\n    \"build\": \"babel --delete-dir-on-start --env-name production src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"dev\": \"npm run lint -- --fix && npm run cover -- -- -st --fail-fast\",\n    \"esdoc\": \"esdoc\",\n    \"lint\": \"xo\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava\",\n    \"travis\": \"npm run lint && npm run cover\"\n  },\n  \"sideEffects\": false,\n  \"xo\": {\n    \"prettier\": true,\n    \"ignores\": [\n      \"lib\"\n    ],\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": \"off\",\n      \"unicorn/prefer-math-trunc\": \"off\"\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
     "longname": "/home/aureooms/dev/js/js-pseudo-random/package.json",
     "name": "package.json",
     "static": true,

@@ -1,8 +1,22 @@
 {
-  "coverage": "4.16%",
-  "expectCount": 24,
+  "coverage": "3.22%",
+  "expectCount": 31,
   "actualCount": 1,
   "files": {
+    "src/_fill.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/fill.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        10
+      ]
+    },
     "src/genBit.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -45,7 +59,28 @@
         1
       ]
     },
-    "src/nextFloat.js": {
+    "src/nextBigInt64.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/nextBigUint64.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextFloat32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextFloat64.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
@@ -53,6 +88,13 @@
       ]
     },
     "src/nextInt32.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextUint16.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
@@ -67,6 +109,13 @@
       ]
     },
     "src/nextUint64.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/nextUint8.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
