@@ -43,5 +43,6 @@ nextFloat64(prng); // A random double in the range [0, 1[.
 
 ## :scroll: References
 
+  - [The Art of Computer Programming Volume 2: Seminumerical Algorithms](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming#Volume_2_%E2%80%93_Seminumerical_Algorithms)
   - [The PRNG shootout](http://prng.di.unimi.it)
   - [Testing common random-number generators](https://github.com/lemire/testingRNG)
