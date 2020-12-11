@@ -1,6 +1,13 @@
 :game_die: [@aureooms/js-pseudo-random](https://aureooms.github.io/js-pseudo-random)
 ==
 
+<p align="center">
+<a href="https://xkcd.com/221">
+<img src="https://imgs.xkcd.com/comics/random_number.png" width="440">
+</a><br/>
+© <a href="https://xkcd.com">xkcd.com</a>
+</p>
+
 Pseudorandom number generators for JavaScript.
 See [docs](https://aureooms.github.io/js-pseudo-random/index.html).
 
