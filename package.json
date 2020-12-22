@@ -76,7 +76,7 @@
     "url": "https://github.com/aureooms/js-pseudo-random/issues"
   },
   "dependencies": {
-    "@aureooms/js-uint64": "^3.0.1"
+    "@aureooms/js-uint64": "^3.1.0"
   },
   "devDependencies": {
     "@aureooms/js-itertools": "4.1.0",
@@ -98,7 +98,7 @@
     "nyc": "15.1.0",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.7",
-    "xo": "0.35.0"
+    "xo": "0.36.1"
   },
   "files": [
     "lib"
