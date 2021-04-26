@@ -1,4 +1,4 @@
-:game_die: [@aureooms/js-pseudo-random](https://aureooms.github.io/js-pseudo-random)
+:game_die: [@aureooms/js-pseudo-random](https://make-github-pseudonymous-again.github.io/js-pseudo-random)
 ==
 
 <p align="center">
@@ -9,7 +9,7 @@
 </p>
 
 Pseudorandom number generators for JavaScript.
-See [docs](https://aureooms.github.io/js-pseudo-random/index.html).
+See [docs](https://make-github-pseudonymous-again.github.io/js-pseudo-random/index.html).
 
 > :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
@@ -38,7 +38,7 @@ nextFloat64(prng); // A random double in the range [0, 1[.
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-pseudo-random/main.svg)](https://codecov.io/gh/aureooms/js-pseudo-random)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-pseudo-random.svg)](https://codeclimate.com/github/aureooms/js-pseudo-random/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-pseudo-random/badge.svg)](https://aureooms.github.io/js-pseudo-random/source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-pseudo-random/badge.svg)](https://make-github-pseudonymous-again.github.io/js-pseudo-random/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-pseudo-random)](https://bundlephobia.com/result?p=@aureooms/js-pseudo-random)
 
 ## :scroll: References
