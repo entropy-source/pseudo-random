@@ -79,7 +79,7 @@
     "@aureooms/js-uint64": "^3.1.0"
   },
   "devDependencies": {
-    "@aureooms/js-itertools": "5.0.1",
+    "@aureooms/js-itertools": "5.1.1",
     "@babel/cli": "7.13.10",
     "@babel/core": "7.13.10",
     "@babel/preset-env": "7.13.10",
