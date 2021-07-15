@@ -10,15 +10,14 @@ const domReady = function (callback) {
 domReady(() => {
 	const projectname = document.createElement('a');
 	projectname.classList.add('project-name');
-	projectname.text = 'aureooms/js-pseudo-random';
+	projectname.text = 'entropy-source/pseudo-random';
 	projectname.href = './index.html';
 
 	const header = document.querySelector('header');
 	header.insertBefore(projectname, header.firstChild);
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
-	testlink.href =
-		'https://app.codecov.io/gh/make-github-pseudonymous-again/js-pseudo-random';
+	testlink.href = 'https://app.codecov.io/gh/entropy-source/pseudo-random';
 	testlink.target = '_BLANK';
 
 	const searchBox = document.querySelector('.search-box');

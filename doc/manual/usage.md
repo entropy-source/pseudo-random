@@ -12,7 +12,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then, import the library where needed
 ```js
-const pseudorandom = await import( '@aureooms/js-pseudo-random' ) ;
+const pseudorandom = await import( '@entropy-source/pseudo-random' ) ;
 // or
-import * as pseudorandom from '@aureooms/js-pseudo-random' ;
+import * as pseudorandom from '@entropy-source/pseudo-random' ;
 ```

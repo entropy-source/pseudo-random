@@ -8,15 +8,15 @@ or [jspm](https://jspm.org/docs).
 
 ### yarn
 ```terminal
-yarn add @aureooms/js-pseudo-random
+yarn add @entropy-source/pseudo-random
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-pseudo-random --save
+npm install @entropy-source/pseudo-random --save
 ```
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-pseudo-random
+jspm install npm:@entropy-source/pseudo-random
 ```
