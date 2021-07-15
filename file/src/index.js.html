@@ -49,24 +49,25 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import fill from &apos;./fill.js&apos;;
-import nextFloat64 from &apos;./nextFloat64.js&apos;;
-import nextInt32 from &apos;./nextInt32.js&apos;;
-import nextUint64 from &apos;./nextUint64.js&apos;;
-import splitmix64 from &apos;./splitmix64.js&apos;;
-import xoroshiro128plus from &apos;./xoroshiro128plus.js&apos;;
-
-/* eslint import/no-anonymous-default-export: [2, {&quot;allowObject&quot;: true}] */
-export default {
-	fill,
-	nextFloat64,
-	nextInt32,
-	nextUint64,
-	splitmix64,
-	xoroshiro128plus,
-};
-
-export {fill, nextFloat64, nextInt32, nextUint64, splitmix64, xoroshiro128plus};
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export {default as _fill} from &apos;./_fill.js&apos;;
+export {default as fill} from &apos;./fill.js&apos;;
+export {default as genBit} from &apos;./genBit.js&apos;;
+export {default as genBoolean} from &apos;./genBoolean.js&apos;;
+export {default as genByte} from &apos;./genByte.js&apos;;
+export {default as genInt32} from &apos;./genInt32.js&apos;;
+export {default as genUint16} from &apos;./genUint16.js&apos;;
+export {default as genUint64} from &apos;./genUint64.js&apos;;
+export {default as nextBigInt64} from &apos;./nextBigInt64.js&apos;;
+export {default as nextBigUint64} from &apos;./nextBigUint64.js&apos;;
+export {default as nextFloat32} from &apos;./nextFloat32.js&apos;;
+export {default as nextFloat64} from &apos;./nextFloat64.js&apos;;
+export {default as nextInt32} from &apos;./nextInt32.js&apos;;
+export {default as nextUint16} from &apos;./nextUint16.js&apos;;
+export {default as nextUint32} from &apos;./nextUint32.js&apos;;
+export {default as nextUint64} from &apos;./nextUint64.js&apos;;
+export {default as nextUint8} from &apos;./nextUint8.js&apos;;
+export {default as splitmix64} from &apos;./splitmix64.js&apos;;
+export {default as xoroshiro128plus} from &apos;./xoroshiro128plus.js&apos;;
 </code></pre>
 
 </div>
