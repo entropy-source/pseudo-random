@@ -10,7 +10,9 @@ class XoRoShiRo128Plus {
 		this.a = a || 24;
 		this.b = b || 16;
 		this.c = c || 37;
-		this.JUMP = JUMP || [0xd8f554a5, 0xdf900294, 0x4b3201fc, 0x170865df];
+		this.JUMP = JUMP || [
+			0xd8_f5_54_a5, 0xdf_90_02_94, 0x4b_32_01_fc, 0x17_08_65_df,
+		];
 		this.p = 0;
 		this.z = 0;
 		this.s0 = get64(seed[0], seed[1]);
