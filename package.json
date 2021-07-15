@@ -193,9 +193,6 @@
   },
   "xo": {
     "prettier": true,
-    "ignores": [
-      "lib"
-    ],
     "plugins": [
       "unicorn"
     ],
