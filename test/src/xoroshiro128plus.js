@@ -2,7 +2,7 @@ import test from 'ava';
 
 import {get64} from '@arithmetic-type/uint64';
 
-import {splitmix64, xoroshiro128plus, fill, nextUint64} from '../../src';
+import {splitmix64, xoroshiro128plus, fill, nextUint64} from '../../src/index.js';
 
 test('Example found at https://github.com/dgryski/go-xoroshiro/blob/ea5ca0291510c1f8b16321d610ae73e1006d499f/xoro_test.go#L28', (t) => {
 	const prng = xoroshiro128plus([0, 1, 0, 2], {a: 55, b: 14, c: 36});

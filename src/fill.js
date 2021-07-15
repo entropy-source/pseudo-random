@@ -1,11 +1,11 @@
-import _fill from './_fill';
-import nextUint8 from './nextUint8';
-import nextUint16 from './nextUint16';
-import nextInt32 from './nextInt32';
-import nextFloat32 from './nextFloat32';
-import nextFloat64 from './nextFloat64';
-import nextBigInt64 from './nextBigInt64';
-import nextBigUint64 from './nextBigUint64';
+import _fill from './_fill.js';
+import nextUint8 from './nextUint8.js';
+import nextUint16 from './nextUint16.js';
+import nextInt32 from './nextInt32.js';
+import nextFloat32 from './nextFloat32.js';
+import nextFloat64 from './nextFloat64.js';
+import nextBigInt64 from './nextBigInt64.js';
+import nextBigUint64 from './nextBigUint64.js';
 
 const fill = (prng, array, i, j) => {
 	switch (array.constructor) {
