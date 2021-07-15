@@ -28,7 +28,7 @@ nextFloat64(prng); // A random double in the range [0, 1[.
 
 [![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-pseudo-random.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-pseudo-random/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-pseudo-random.svg)](https://www.npmjs.org/package/@aureooms/js-pseudo-random)
-[![Build](https://img.shields.io/travis/make-github-pseudonymous-again/js-pseudo-random/main.svg)](https://travis-ci.org/make-github-pseudonymous-again/js-pseudo-random/branches)
+[![Build](https://img.shields.io/travis/make-github-pseudonymous-again/js-pseudo-random/main.svg)](https://travis-ci.com/make-github-pseudonymous-again/js-pseudo-random/branches)
 [![Dependencies](https://img.shields.io/david/make-github-pseudonymous-again/js-pseudo-random.svg)](https://david-dm.org/make-github-pseudonymous-again/js-pseudo-random)
 [![Dev dependencies](https://img.shields.io/david/dev/make-github-pseudonymous-again/js-pseudo-random.svg)](https://david-dm.org/make-github-pseudonymous-again/js-pseudo-random?type=dev)
 [![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-pseudo-random.svg)](https://github.com/make-github-pseudonymous-again/js-pseudo-random/issues)
