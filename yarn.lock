@@ -2068,12 +2068,12 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@iterable-iterator/map@^1.0.1":
+"@iterable-iterator/map@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/map/-/map-1.0.1.tgz#7e4d82cb86877bf487e075347fde990ed21844da"
   integrity sha512-lUvX8/OCYRdof3eZii8ntJUvqW1MlL2ESkIcQj3cagajKVfBIBj058wE4ScrzQl6U2udMva/n2NwP70smdfZ+g==
 
-"@iterable-iterator/range@^2.0.1":
+"@iterable-iterator/range@2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/range/-/range-2.0.1.tgz#3d566aa26e3df496f2ba18a2f67de4c65518e81c"
   integrity sha512-JPkPH/u4AQxWyqXDOqHk4DZeQJANv67cXuiE0DLC0FTaRgExQASlbhPZJo+JVxZRXW2EOBXSzdKdJQe5w9XghA==
