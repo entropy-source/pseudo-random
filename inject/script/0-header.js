@@ -7,24 +7,24 @@ const domReady = function (callback) {
 	}
 };
 
-domReady(function () {
+domReady(() => {
 	const projectname = document.createElement('a');
 	projectname.classList.add('project-name');
-	projectname.text = 'aureooms/js-pseudo-random';
+	projectname.text = 'entropy-source/pseudo-random';
 	projectname.href = './index.html';
 
-	const header = document.querySelectorAll('header')[0];
+	const header = document.querySelector('header');
 	header.insertBefore(projectname, header.firstChild);
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
-	testlink.href = 'https://coveralls.io/github/aureooms/js-pseudo-random';
+	testlink.href = 'https://app.codecov.io/gh/entropy-source/pseudo-random';
 	testlink.target = '_BLANK';
 
 	const searchBox = document.querySelector('.search-box');
 	const input = document.querySelector('.search-input');
 
 	// Active search box when focus on searchBox.
-	input.addEventListener('focus', function () {
+	input.addEventListener('focus', () => {
 		searchBox.classList.add('active');
 	});
 });

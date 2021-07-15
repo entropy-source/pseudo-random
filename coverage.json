@@ -1,7 +1,7 @@
 {
-  "coverage": "3.22%",
-  "expectCount": 31,
-  "actualCount": 1,
+  "coverage": "0%",
+  "expectCount": 15,
+  "actualCount": 0,
   "files": {
     "src/_fill.js": {
       "expectCount": 1,
@@ -39,13 +39,6 @@
       ]
     },
     "src/genInt32.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
-    "src/genUint16.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
@@ -94,13 +87,6 @@
         1
       ]
     },
-    "src/nextUint16.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
-    },
     "src/nextUint32.js": {
       "expectCount": 1,
       "actualCount": 0,
@@ -120,31 +106,6 @@
       "actualCount": 0,
       "undocumentLines": [
         1
-      ]
-    },
-    "src/splitmix64.js": {
-      "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
-    },
-    "src/xoroshiro128plus.js": {
-      "expectCount": 13,
-      "actualCount": 1,
-      "undocumentLines": [
-        4,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        20
       ]
     }
   }
