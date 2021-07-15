@@ -1,7 +1,8 @@
 import test from 'ava';
-import {range, map} from '@aureooms/js-itertools';
+import {range} from '@iterable-iterator/range';
+import {map} from '@iterable-iterator/map';
 
-import {get64} from '@aureooms/js-uint64';
+import {get64} from '@arithmetic-type/uint64';
 import {splitmix64, nextUint64, nextFloat64} from '../../src';
 
 test('https://rosettacode.org/wiki/Pseudo-random_numbers/Splitmix64 #1', (t) => {

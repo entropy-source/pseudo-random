@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {get64} from '@aureooms/js-uint64';
+import {get64} from '@arithmetic-type/uint64';
 
 import {splitmix64, xoroshiro128plus, fill, nextUint64} from '../../src';
 

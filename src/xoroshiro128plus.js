@@ -1,5 +1,5 @@
 import assert from 'assert';
-import {rotl64, get64, add64, xor64, shl64} from '@aureooms/js-uint64';
+import {rotl64, get64, add64, xor64, shl64} from '@arithmetic-type/uint64';
 
 export default function xoroshiro128plus(seed, options) {
 	return new XoRoShiRo128Plus(seed, options);

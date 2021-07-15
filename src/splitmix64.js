@@ -1,4 +1,4 @@
-import {add64, mul64, xor64, shr64, get64} from '@aureooms/js-uint64';
+import {add64, mul64, xor64, shr64, get64} from '@arithmetic-type/uint64';
 
 export default function* splitmix64(seed) {
 	let state = get64(...seed);
