@@ -2,7 +2,72 @@
   "name": "@aureooms/js-pseudo-random",
   "description": "Pseudorandom number generators for JavaScript",
   "version": "2.0.0",
+  "license": "AGPL-3.0",
   "author": "aureooms",
+  "homepage": "https://make-github-pseudonymous-again.github.io/js-pseudo-random",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/make-github-pseudonymous-again/js-pseudo-random"
+  },
+  "bugs": {
+    "url": "https://github.com/make-github-pseudonymous-again/js-pseudo-random/issues"
+  },
+  "keywords": [
+    "agpl",
+    "generator",
+    "javascript",
+    "number",
+    "prng",
+    "pseudo",
+    "random",
+    "xoroshiro",
+    "xoshiro"
+  ],
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "babel --delete-dir-on-start --env-name production src -d lib",
+    "cover": "nyc --reporter=lcov npm test",
+    "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
+    "esdoc": "esdoc",
+    "lint": "xo",
+    "lint-config": "fixpack --dryRun",
+    "lint-config-and-fix": "fixpack || fixpack",
+    "prepare": "npm run build",
+    "release": "np",
+    "test": "ava",
+    "travis": "npm run lint && npm run cover"
+  },
+  "dependencies": {
+    "@arithmetic-type/uint64": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.13.10",
+    "@babel/core": "7.13.10",
+    "@babel/preset-env": "7.13.10",
+    "@babel/register": "7.13.8",
+    "@iterable-iterator/map": "^1.0.1",
+    "@iterable-iterator/range": "^2.0.1",
+    "ava": "3.15.0",
+    "babel-plugin-transform-remove-console": "6.9.4",
+    "babel-plugin-unassert": "3.0.1",
+    "babel-preset-power-assert": "3.0.0",
+    "coveralls": "3.1.0",
+    "esdoc": "1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "1.0.0",
+    "esdoc-inject-script-plugin": "1.0.0",
+    "esdoc-inject-style-plugin": "1.0.0",
+    "esdoc-standard-plugin": "1.0.0",
+    "fixpack": "4.0.0",
+    "np": "7.4.0",
+    "nyc": "15.1.0",
+    "power-assert": "1.6.1",
+    "regenerator-runtime": "0.13.7",
+    "xo": "0.36.1"
+  },
   "ava": {
     "files": [
       "test/src/**/*"
@@ -72,74 +137,9 @@
       }
     }
   },
-  "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-pseudo-random/issues"
-  },
-  "dependencies": {
-    "@arithmetic-type/uint64": "^4.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "7.13.10",
-    "@babel/core": "7.13.10",
-    "@babel/preset-env": "7.13.10",
-    "@babel/register": "7.13.8",
-    "@iterable-iterator/map": "^1.0.1",
-    "@iterable-iterator/range": "^2.0.1",
-    "ava": "3.15.0",
-    "babel-plugin-transform-remove-console": "6.9.4",
-    "babel-plugin-unassert": "3.0.1",
-    "babel-preset-power-assert": "3.0.0",
-    "coveralls": "3.1.0",
-    "esdoc": "1.1.0",
-    "esdoc-ecmascript-proposal-plugin": "1.0.0",
-    "esdoc-inject-script-plugin": "1.0.0",
-    "esdoc-inject-style-plugin": "1.0.0",
-    "esdoc-standard-plugin": "1.0.0",
-    "np": "7.4.0",
-    "nyc": "15.1.0",
-    "power-assert": "1.6.1",
-    "regenerator-runtime": "0.13.7",
-    "xo": "0.36.1",
-    "fixpack": "4.0.0"
-  },
-  "files": [
-    "lib"
-  ],
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-pseudo-random",
-  "keywords": [
-    "agpl",
-    "generator",
-    "javascript",
-    "number",
-    "prng",
-    "pseudo",
-    "random",
-    "xoroshiro",
-    "xoshiro"
-  ],
-  "license": "AGPL-3.0",
-  "main": "lib/index.js",
   "prettier": {
     "trailingComma": "all"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/make-github-pseudonymous-again/js-pseudo-random"
-  },
-  "scripts": {
-    "build": "babel --delete-dir-on-start --env-name production src -d lib",
-    "cover": "nyc --reporter=lcov npm test",
-    "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
-    "esdoc": "esdoc",
-    "lint": "xo",
-    "prepare": "npm run build",
-    "release": "np",
-    "test": "ava",
-    "travis": "npm run lint && npm run cover",
-    "lint-config-and-fix": "fixpack || fixpack",
-    "lint-config": "fixpack --dryRun"
-  },
-  "sideEffects": false,
   "xo": {
     "prettier": true,
     "ignores": [
