@@ -69,8 +69,8 @@
     "@arithmetic-type/uint64": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.6",
-    "@babel/preset-env": "7.14.7",
+    "@babel/core": "7.14.8",
+    "@babel/preset-env": "7.14.8",
     "@babel/register": "7.14.5",
     "@commitlint/cli": "12.1.4",
     "@iterable-iterator/map": "1.0.1",
