@@ -72,7 +72,7 @@
     "@babel/core": "7.23.2",
     "@babel/preset-env": "7.23.2",
     "@babel/register": "7.22.15",
-    "@commitlint/cli": "17.7.2",
+    "@commitlint/cli": "17.8.0",
     "@iterable-iterator/map": "1.0.1",
     "@iterable-iterator/range": "2.1.0",
     "@js-library/commitlint-config": "0.0.4",
