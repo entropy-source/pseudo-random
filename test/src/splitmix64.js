@@ -1,8 +1,9 @@
 import test from 'ava';
-import {range} from '@iterable-iterator/range';
-import {map} from '@iterable-iterator/map';
 
 import {get64} from '@arithmetic-type/uint64';
+import {map} from '@iterable-iterator/map';
+import {range} from '@iterable-iterator/range';
+
 import {splitmix64, nextUint64, nextFloat64} from '#module';
 
 test('https://rosettacode.org/wiki/Pseudo-random_numbers/Splitmix64 #1', (t) => {

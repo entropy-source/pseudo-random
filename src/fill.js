@@ -1,20 +1,21 @@
 import _fill from './_fill.js';
-import nextUint8 from './nextUint8.js';
-import nextUint16 from './nextUint16.js';
-import nextInt32 from './nextInt32.js';
-import nextFloat32 from './nextFloat32.js';
-import nextFloat64 from './nextFloat64.js';
 import nextBigInt64 from './nextBigInt64.js';
 import nextBigUint64 from './nextBigUint64.js';
+import nextFloat32 from './nextFloat32.js';
+import nextFloat64 from './nextFloat64.js';
+import nextInt32 from './nextInt32.js';
+import nextUint16 from './nextUint16.js';
+import nextUint8 from './nextUint8.js';
 
 const fill = (prng, array, i, j) => {
 	switch (array.constructor) {
-		case ArrayBuffer:
+		case ArrayBuffer: {
 			return _fill(nextUint8, new Uint8Array(array), i, j);
+		}
 
 		case Int8Array:
 		case Uint8Array:
-		case Uint8ClampedArray:
+		case Uint8ClampedArray: {
 			return _fill(
 				nextUint8,
 				prng,
@@ -22,9 +23,10 @@ const fill = (prng, array, i, j) => {
 				i,
 				j,
 			);
+		}
 
 		case Int16Array:
-		case Uint16Array:
+		case Uint16Array: {
 			return _fill(
 				nextUint16,
 				prng,
@@ -32,9 +34,10 @@ const fill = (prng, array, i, j) => {
 				i,
 				j,
 			);
+		}
 
 		case Int32Array:
-		case Uint32Array:
+		case Uint32Array: {
 			return _fill(
 				nextInt32,
 				prng,
@@ -42,23 +45,29 @@ const fill = (prng, array, i, j) => {
 				i,
 				j,
 			);
+		}
 
-		case Float32Array:
+		case Float32Array: {
 			return _fill(nextFloat32, prng, array, i, j);
+		}
 
-		case Float64Array:
+		case Float64Array: {
 			return _fill(nextFloat64, prng, array, i, j);
+		}
 
-		case BigInt64Array:
+		case BigInt64Array: {
 			return _fill(nextBigInt64, prng, array, i, j);
+		}
 
-		case BigUint64Array:
+		case BigUint64Array: {
 			return _fill(nextBigUint64, prng, array, i, j);
+		}
 
-		default:
+		default: {
 			throw new Error(
 				`fill(prng, array, ...): array with constructor '${array.constructor.name}' not implemented`,
 			);
+		}
 	}
 };
 
