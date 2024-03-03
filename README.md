@@ -28,7 +28,7 @@ nextFloat64(prng); // A random double in the range [0, 1[.
 
 [![License](https://img.shields.io/github/license/entropy-source/pseudo-random.svg)](https://raw.githubusercontent.com/entropy-source/pseudo-random/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@entropy-source/pseudo-random.svg)](https://www.npmjs.org/package/@entropy-source/pseudo-random)
-[![Tests](https://img.shields.io/github/workflow/status/entropy-source/pseudo-random/ci:cover?event=push&label=tests)](https://github.com/entropy-source/pseudo-random/actions/workflows/ci:cover.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/workflow/status/entropy-source/pseudo-random/ci?event=push&label=tests)](https://github.com/entropy-source/pseudo-random/actions/workflows/ci.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/entropy-source/pseudo-random.svg)](https://github.com/entropy-source/pseudo-random/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/entropy-source/pseudo-random.svg)](https://github.com/entropy-source/pseudo-random/issues)
 [![Downloads](https://img.shields.io/npm/dm/@entropy-source/pseudo-random.svg)](https://www.npmjs.org/package/@entropy-source/pseudo-random)
